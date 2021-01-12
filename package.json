@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "sh ./scripts/setup.sh && node --max_old_space_size=${MAX_OLD_SPACE_SIZE:-4096} node_modules/@vue/cli-service/bin/vue-cli-service.js build",
+    "build": "sh ./scripts/setup.sh && node  node_modules/@vue/cli-service/bin/vue-cli-service.js build",
     "analyz": "sh ./scripts/setup.sh && analyzer_report=true node --max_old_space_size=${MAX_OLD_SPACE_SIZE:-4096} node_modules/@vue/cli-service/bin/vue-cli-service.js build --report-json",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:unit:dev": "vue-cli-service test:unit --watchAll",
     "setup:dev": "sh ./scripts/setup.dev.sh",
-    "checkout": "chmod +x ./scripts/checkout.sh && sh ./scripts/checkout.sh $@",
+    "checkout": "chmod +x ./scripts/checkout.sh && sh ./scripts/checkout.sh",
     "sync": "chmod +x ./scripts/sync-modules.sh && sh ./scripts/sync-modules.sh $@",
     "i18n:generate": "node ./src/tools/i18n-generator generate"
   },

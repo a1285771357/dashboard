@@ -17,7 +17,7 @@ show_br_commit () {
 
 echo "🗃 Initializing git repository..."
 
-DEFAULT_GIT_PREFIX="https://github.com/yunionio"
+DEFAULT_GIT_PREFIX="https://github.com/a1285771357"
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 if [ $DEV_SETUP ]
@@ -30,6 +30,7 @@ if [ ! -d "./src" ]; then
   git clone -b $BRANCH $DEFAULT_GIT_PREFIX/dashboard-common.git src
 fi
 if [ ! -d "./containers" ]; then
+  echo "=============="
   git clone -b $BRANCH $DEFAULT_GIT_PREFIX/dashboard-module-cloudenv.git containers/Cloudenv
   git clone -b $BRANCH $DEFAULT_GIT_PREFIX/dashboard-module-compute.git containers/Compute
   git clone -b $BRANCH $DEFAULT_GIT_PREFIX/dashboard-module-network.git containers/Network

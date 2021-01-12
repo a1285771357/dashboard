@@ -21,13 +21,16 @@
 # fi
 
 branch=$1
-currentPath=$(dirname $0)
+currentPath=$(dirname $(dirname $0))
+echo "输出基础路径[$0]"
+echo "输出路径[$currentPath]"
 checkout(){
+  echo "输出参数[$1]"
   local moduleName=$1; shift
   local path=$1; shift
   { # try
     echo 
-    cd $currentPath/$path 
+    cd $currentPath/containers/$path 
     git fetch && \
     git checkout $branch && \
     # 不显示输出
